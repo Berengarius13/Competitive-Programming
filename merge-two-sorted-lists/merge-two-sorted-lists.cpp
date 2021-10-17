@@ -11,48 +11,75 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-	
-	// Resolving the boundery cases
-        if(l1==nullptr)
+        
+        if(l1 ==NULL)
             return l2;
-        else if(l2==nullptr)
+        if(l2 == NULL)
             return l1;
+        ListNode* n = new ListNode;
+        ListNode* ans= n;
+        
+        while(l1 !=NULL && l2 !=NULL)
+        {
+            if(l1->val >=l2->val){
+                n->next = l2;
+                l2 = l2->next;
+                n = n->next; 
+            }
+            else {
+                n->next = l1;
+                l1 = l1->next;
+                n = n->next;
+            }
+        }
+        if(l1 == NULL)
+            n->next=l2;
+        if(l2 == NULL)
+            n->next=l1;
+	
+// 	// Resolving the boundery cases
+//         if(l1==nullptr)
+//             return l2;
+//         else if(l2==nullptr)
+//             return l1;
 			
-        ListNode* head;
-        ListNode* merged;
+//         ListNode* head;
+//         ListNode* merged;
 		
-	// Finding the New_Head for the merged LinkedList
-        if(l1->val<=l2->val)
-        {
-            head=l1;
-            l1=l1->next;
-        }
-        else
-        {
-            head=l2;
-            l2=l2->next;
-        }
+// 	// Finding the New_Head for the merged LinkedList
+//         if(l1->val<=l2->val)
+//         {
+//             head=l1;
+//             l1=l1->next;
+//         }
+//         else
+//         {
+//             head=l2;
+//             l2=l2->next;
+//         }
 		
-        merged=head; // Initialising the merged LL
+//         merged=head; // Initialising the merged LL
 		
-        while(l1!=nullptr && l2!=nullptr)
-        {
-            if(l1->val<=l2->val)
-            {
-                merged->next=l1;
-                l1=l1->next;
-            }
-            else
-            {
-                merged->next=l2;
-                l2=l2->next;
-            }
-            merged=merged->next;
-        }
+//         while(l1!=nullptr && l2!=nullptr)
+//         {
+//             if(l1->val<=l2->val)
+//             {
+//                 merged->next=l1;
+//                 l1=l1->next;
+//             }
+//             else
+//             {
+//                 merged->next=l2;
+//                 l2=l2->next;
+//             }
+//             merged=merged->next;
+//         }
 		
-	/*Checking whether any of the old LLs has any value left in it... if yes then just             append them all at the end of the final LL*/
-        if(l1) merged->next=l1;
-        if(l2) merged->next=l2;
-        return head;
+// 	/*Checking whether any of the old LLs has any value left in it... if yes then just             append them all at the end of the final LL*/
+//         if(l1) merged->next=l1;
+//         if(l2) merged->next=l2;
+//         return head;
+        return ans->next;
     }
+    
 };
