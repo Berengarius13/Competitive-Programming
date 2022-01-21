@@ -2,8 +2,8 @@ class Solution {
 public:
     char findTheDifference(string s, string t) {
         char ans; 
-        map<char, int> m1; 
-        map<char, int> m2;
+        unordered_map<char, int> m1; 
+        unordered_map<char, int> m2;
         /*
         * Remember this technique to store frequency in maps
         * Remember map is initialize to zero automatically
