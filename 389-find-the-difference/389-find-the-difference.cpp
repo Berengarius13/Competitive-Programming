@@ -20,12 +20,23 @@ public:
         
 //         return ans;
         // Bitwise method
-        int b = 0; 
+        // int b = 0; 
+        // for(auto c:s)
+        //     b = b^c;
+        // for(auto c:t)
+        //     b = b^c;
+        // return b;
+        
+        // Difference method
+        /*We use ascii value to find the answer*/
+        int asci = 0; 
         for(auto c:s)
-            b = b^c;
+            asci = asci + (int)c;
         for(auto c:t)
-            b = b^c;
-        return b;
+            asci = asci - (int)c;
+        asci = asci * -1;
+        return (char)asci;
+        
         
     }
 };
