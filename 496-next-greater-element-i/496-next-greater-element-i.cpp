@@ -3,6 +3,7 @@ public:
     /*
     * We are using hashing to mark values in nums2 
     * We can directly use that information in nums1
+    * We store values we have iterated through in vector
     */
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
         vector<int> ans;
