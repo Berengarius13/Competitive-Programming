@@ -4,17 +4,12 @@ public:
         string ans; 
         int l = s.length()-1; 
         stack<char> stak;
-        bool flag = false;
         for(int i = l; i >=0; i--){
             if(s[i] == ' '){
                 while(!stak.empty()){
                     ans.push_back(stak.top());
                     stak.pop();
-                    flag = true;
-                }
-                if (flag == true){
-                    ans.push_back(' ');
-                    flag = false;
+                    if(stak.empty()) ans.push_back(' ');
                 }
             }
             else{
