@@ -15,7 +15,7 @@ public:
         return m[i]=0;
     }
     bool canJump(vector<int>& nums) {
-        vector<int> m(10001,-1);
+        vector<int> m(10000,-1);
         return canReach(nums,0,m);
         
     }
