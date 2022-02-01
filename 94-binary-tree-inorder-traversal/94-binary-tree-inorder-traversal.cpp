@@ -11,7 +11,8 @@
  */
 class Solution {
 public:
-    
+    /* Recursive
+    */
     TreeNode* tree(TreeNode* root, vector<int> &ans){
         
         if(root->left != NULL) tree(root->left, ans);
