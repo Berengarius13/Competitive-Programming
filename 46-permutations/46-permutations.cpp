@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> ans;
-    void rearr(vector<int> nums,int b){
+    void rearr(vector<int> &nums,int b){
         if(b == nums.size()-1) {
             ans.push_back(nums);
             return;
@@ -9,6 +9,7 @@ public:
         for(int i = b; i < nums.size(); i++){
             swap(nums[b], nums[i]);
             rearr(nums, b+1);
+            swap(nums[b], nums[i]);
         }
         return;
     }
