@@ -9,6 +9,7 @@ public:
         for(int i = b; i < nums.size(); i++){
             swap(nums[b], nums[i]);
             rearr(nums, b+1);
+            // We reset the swap
             swap(nums[b], nums[i]);
         }
         return;
