@@ -30,6 +30,61 @@ public:
         key_val[key] = value;
     }
 };
+// class LRUCache {
+// public:
+//     vector<int> key_val;
+//     vector<list<int> :: iterator> key_ite;
+//     list<int> li;
+//     list<int> :: iterator temp = li.end();
+//     int capacity;
+//     LRUCache(int capacity) {
+//         for(int i = 0; i <= 10001; i++){
+//             key_val.push_back(-1);
+//             key_ite.push_back(li.end());
+//         }
+//         this->capacity = capacity;
+//     }
+    
+//     int get(int key) {
+//         if(li.size()< capacity){
+//             if(key_ite[key] != temp){
+//                 li.erase(key_ite[key]);
+//             }
+//         }
+//         else{
+//             if(key_ite[key] == temp){
+//                 // key_val[li.front()] = -1;
+//                 li.erase(li.begin());
+//             }
+//             else{
+//                 li.erase(key_ite[key]);
+//             }
+//         }
+//         li.push_back(key);
+//         key_ite[key] = --li.end();
+//         return key_val[key];
+//     }
+    
+//     void put(int key, int value) {
+//         if(li.size()< capacity){
+//             if(key_ite[key] != temp){
+//                 li.erase(key_ite[key]);
+//             }
+//         }
+//         else{
+//             if(key_ite[key] == temp){
+//                 key_val[li.front()] = -1;
+//                 li.erase(li.begin());
+//             }
+//             else{
+//                 li.erase(key_ite[key]);
+//             }
+//         }
+//         li.push_back(key);
+//         key_ite[key] = --li.end();
+//         key_val[key] = value;
+//     }
+// };
 
 /**
  * Your LRUCache object will be instantiated and called as such:
