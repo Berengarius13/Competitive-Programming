@@ -14,7 +14,7 @@ class Solution {
 public:
     bool ans = true;
     typedef vector<vector<int>> graph;
-    void dfs(vector<vector<int>> &pre, int p, vector<int> &vis, vector<int> par)
+    void dfs(vector<vector<int>> &pre, int p, vector<int> &vis, vector<int> &par)
     {
         vis[p] = 1;
         par[p] = 1;
@@ -28,6 +28,7 @@ public:
                 }
             }
         }
+        par[p] = 0;
         return;
     }
     // First we will create adjacncy list
@@ -44,7 +45,7 @@ public:
         vector<int> par(numCourses, 0);
         for(int i = 0; i<numCourses; i++)
             dfs(g, i, vis, par);
-       
+               
         return ans;
     }
     
