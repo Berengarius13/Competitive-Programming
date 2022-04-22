@@ -17,6 +17,7 @@ public:
     typedef vector<vector<int>> graph;
     void dfs(vector<vector<int>> &pre, int p, vector<int> &vis, vector<int> par)
     {
+        if(!ans) return;
         vis[p] = 1;
         par[p] = 1;
         for(auto &node: pre[p]){
