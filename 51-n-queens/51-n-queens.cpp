@@ -51,10 +51,6 @@ public:
         for(int i = 0; i < n; i++)
             n_q(temp, maze, 0, i, 1);
         
-        // vector<vector<string>> yes;
-        // for(auto &it: ans){
-        //     yes.push_back(it);
-        // }
         return ans;
     }
 };
