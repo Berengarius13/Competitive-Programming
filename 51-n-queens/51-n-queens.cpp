@@ -21,6 +21,11 @@ public:
             if(!maze[i][y]) maze[i][y] = s;
         }
         for(int i = 0; i < n; i++){
+            /*
+            * You will assume that you will definately find a queen in next row
+            * Assuming that time complexity reduces
+            * Why? Otherwise there will be 2 queens in same row which is illegal
+            */
                 if(maze[x+1][i]== 0)
                     n_q(temp, maze, x+1, i, s+1);
         }
@@ -39,6 +44,10 @@ public:
     vector<vector<string>> solveNQueens(int n) {
         vector<vector<int>> maze(n, vector<int> (n, 0));
         vector<string> temp(n, string  (n , '.'));
+        /* 
+        * There will always be a queen in first row of nXn, n queen
+        * Assuming that time complexity reduced y 1/n
+        */
         for(int i = 0; i < n; i++)
             n_q(temp, maze, 0, i, 1);
         
