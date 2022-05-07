@@ -4,54 +4,37 @@ using namespace std;
 
  // } Driver Code Ends
 
-// Remember each node have only one parent
-// You remember there exist a way to reach node n, in key
-// You update key if there exist a better way to reach node
+
 class Solution
 {
 	public:
 	//Function to find sum of weights of edges of the Minimum Spanning Tree.
     int spanningTree(int V, vector<vector<int>> adj[])
     {
-        //optimal sol O(NlogN)
-        
-        // int par[V];
-        int key[V];
-        bool mst[V];
-        
-        for(int i=0;i<V;i++)
-        {
-            key[i]=INT_MAX,mst[i]=false;
-        }
-        
-        key[0]=0;
+        // code here
         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
-        
-        pq.push({key[0],0});  //key[],weight
-        
-        while(!pq.empty())
-        {
-            int u=pq.top().second;   //edge u-->v
+        vector<int> key(V, INT_MAX); // To track value, there can be only one parent of node n, 
+                        // that parent must be minimum, we keep track what value connects 
+                        // to that node n
+        vector<int> mst(V, 0); // To to check if node is in MST or not
+        key[0] = 0; // As 0 have no parent
+        pq.push({0,0});
+        while(!pq.empty()){
+            int node = pq.top().second;
             pq.pop();
-            
-            mst[u]=true;
-            for(auto it:adj[u])
-            {
-                int v=it[0];
-                int wt=it[1];
-                
-                if(mst[v]==false and wt<key[v])
-                {
-                    key[v]=wt;
-                    pq.push({key[v],v});
+            mst[node] = 1;
+            for(auto &cnode : adj[node]){
+                int weight = cnode[1];
+                int child_node = cnode[0];
+                if(mst[child_node] == 0 && weight < key[child_node]){
+                    key[child_node] = weight;
+                    pq.push({weight, child_node});
                 }
             }
         }
-        
-        int sum=0;
-        for(int i=0;i<V;i++)
-        {
-            sum+=key[i];
+        int sum = 0;
+        for(auto &su : key){
+            sum += su;
         }
         return sum;
         
