@@ -51,7 +51,26 @@ public:
 you are required to complete the below method */
 void SortedStack :: sort()
 {
-   int size = s.size();
+    stack<int> temp;
+    while(!s.empty()){
+        int top_removed = s.top(); s.pop();
+        
+        while(!temp.empty() && top_removed > temp.top()){
+            s.push(temp.top());
+            temp.pop();
+        }
+        temp.push(top_removed);
+        
+    }
+    while(!temp.empty()){
+            s.push(temp.top());
+            temp.pop();
+        }
+    
+   
+}
+/*
+int size = s.size();
    stack<int> temp;
    for(int i = 0; i < size; i++){
        int maxi = INT_MIN;
@@ -76,4 +95,4 @@ void SortedStack :: sort()
       s.push(temp.top());
       temp.pop();
   }
-}
+*/
