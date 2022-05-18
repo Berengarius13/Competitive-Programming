@@ -27,7 +27,6 @@ public:
                     board[i][m] = '.';
                 }
             }
-            // return false;
           }
         else {
             return solver(board, i, m+1, vec);
