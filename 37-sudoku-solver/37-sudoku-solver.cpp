@@ -1,14 +1,13 @@
 class Solution {
 public:
     vector<vector<char>> ans;
-    void solver(vector<vector<char>> &board, int i, int j, vector<vector<vector<int>>> &vec)    {
+    bool solver(vector<vector<char>> &board, int i, int j, vector<vector<vector<int>>> &vec)    {
         
         if(j == 9){
             i++; j = 0;
         }
         if(i== 9){
-            ans = board;
-            return;
+            return true;
         }
         // for(int m = j+1; m < 9; m++){     
         // }
@@ -20,19 +19,20 @@ public:
                     vec[1][m][k] = 1;
                     vec[2][(3*(i/3))+(m/3)][k] = 1; 
                     board[i][m] = char(k+48);
-                    solver(board, i, m+1, vec);
+                    if(solver(board, i, m+1, vec))
+                        return true;
                     vec[0][i][k] = 0;
                     vec[1][m][k] = 0;
                     vec[2][(3*(i/3))+(m/3)][k] = 0; 
                     board[i][m] = '.';
                 }
             }
+            // return false;
           }
         else {
-            solver(board, i, m+1, vec);
+            return solver(board, i, m+1, vec);
         }
-        
-        
+        return false;  
     }
     void solveSudoku(vector<vector<char>>& board) {
        // Create Hash [3][9][10],           int x = character - '0'
@@ -53,6 +53,5 @@ public:
             }
         }
         solver(board, 0, 0, vec);
-        board = ans;
     }
 };
