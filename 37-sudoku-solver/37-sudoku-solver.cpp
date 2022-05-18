@@ -20,13 +20,11 @@ public:
                     vec[1][m][k] = 1;
                     vec[2][(3*(i/3))+(m/3)][k] = 1; 
                     board[i][m] = char(k+48);
-                    vec[0][i][0]++;
                     solver(board, i, m+1, vec);
                     vec[0][i][k] = 0;
                     vec[1][m][k] = 0;
                     vec[2][(3*(i/3))+(m/3)][k] = 0; 
                     board[i][m] = '.';
-                    vec[0][i][0]--;
                 }
             }
           }
@@ -49,7 +47,6 @@ public:
                 if(board[i][j] != '.'){
                     int k = (int)board[i][j] - '0';
                     vec[0][i][k] = 1;
-                    vec[0][i][0]++;
                     vec[1][j][k] = 1;
                     vec[2][(3*(i/3))+(j/3)][k] = 1;
                 }
