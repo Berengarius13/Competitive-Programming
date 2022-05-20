@@ -1,22 +1,15 @@
 class Solution {
 public:
+    int absolute_max;
+    int m_s(vector<int> &nums, int i){
+        if(i == nums.size()) return 0;
+        int res = max(nums[i], nums[i]+m_s(nums, i+1));
+        absolute_max = max(res, absolute_max);
+        return res;
+    }
     int maxSubArray(vector<int>& nums) {
-        if(nums.size() == 1)
-            return nums[0];
-        int ans = INT_MIN;
-        int maxi = 0;
-        
-        for(int i = 0; i< nums.size(); i++){
-            
-            
-            maxi = maxi + nums[i];
-            ans = max(maxi, ans);
-            if(maxi < 0){
-                maxi = 0;
-            }
-            
-            
-        }
-        return ans;
+        absolute_max = nums[0];
+        m_s(nums, 0);
+        return absolute_max;
     }
 };
