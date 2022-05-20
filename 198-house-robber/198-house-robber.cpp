@@ -1,3 +1,4 @@
+// Same as minimum path sum, 2 cases double jump and triple jump
 class Solution {
 public:
     int max_sum;
