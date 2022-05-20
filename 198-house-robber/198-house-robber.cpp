@@ -5,8 +5,7 @@ public:
         if(i != -2)
             if(memo[i] != -1) return memo[i];
         int n = nums.size();
-        if(i == n-1) return nums[i];
-        if(i == n-2) return nums[i];
+        if(i >= n) return 0;
         int doub_j = 0; int trip_j = 0;
         if(i + 2 < n)
             doub_j = rf(nums, i+2, memo);
