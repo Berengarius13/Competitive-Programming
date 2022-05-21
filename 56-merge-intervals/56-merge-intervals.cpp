@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        map<int, int> mp;
+        unordered_map<int, int> mp;
         sort(intervals.begin(), intervals.end());
         vector<vector<int>> ans;
         int start = 0; int end = 0;
