@@ -6,6 +6,7 @@ public:
         for(auto &num : nums)
             mp.insert({num, 1});
         int max_count = 0;
+        // Iterate over map
         for(auto &pair : mp){
             if(pair.second == 1){
                 int count = 1;
