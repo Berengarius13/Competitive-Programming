@@ -1,6 +1,36 @@
 
 
 class Solution {
+public:
+    Node* dfs(Node* node, unordered_map<Node*, Node*> &mp){
+        vector<Node*> neighbor; // Initialize adjacent node list for simplification
+        Node* curr = new Node(node->val); // New node,
+        mp[node] = curr; // Map it, it's done, no need to compute again and again
+        // We need to add neigbors in it, all of Node neighbouts
+        for(auto &cnode : node->neighbors){
+            // Check if it is already created or not
+            if(mp.find(cnode) != mp.end()){ // Its found
+                neighbor.push_back(mp[cnode]);
+            }
+            else{ // Node found we need to create it and it's neighbor
+                Node* get_frm_dfs = dfs(cnode, mp);
+                neighbor.push_back(get_frm_dfs);
+            }
+        }
+        curr->neighbors = neighbor; // We add all the neighbors
+        return curr;  
+    }
+    Node* cloneGraph(Node* node) {
+        if(node == NULL) return NULL;
+        unordered_map<Node*, Node*> mp;
+        // Return version
+        return dfs(node, mp);
+    }
+};
+/*
+
+
+class Solution {
     void dfs (Node* node, Node* curr, vector<int> &vis, Node * king){
         vis[node->val] = 1;
         
@@ -34,45 +64,7 @@ public:
     }
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 /*
 // Definition for a Node.
