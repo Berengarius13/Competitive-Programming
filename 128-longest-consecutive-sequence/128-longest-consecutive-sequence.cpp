@@ -2,6 +2,7 @@ class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
         unordered_map<int, int> mp;
+        // Make map of (num = > 1), 1 remembers that it is filled, but not visited yet
         for(auto &num : nums)
             mp.insert({num, 1});
         int max_count = 0;
