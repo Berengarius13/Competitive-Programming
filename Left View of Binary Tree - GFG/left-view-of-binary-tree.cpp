@@ -111,7 +111,7 @@ int main() {
 // } Driver Code Ends
 
 
-void dfs(Node* node, int i, int col, map<int, int> &mp){
+void dfs(Node* node, int i, int col, unordered_map<int, int> &mp){
     if(node == NULL) return;
     if(mp.find(i) == mp.end()){
         mp[i] = node->data;
@@ -124,10 +124,10 @@ void dfs(Node* node, int i, int col, map<int, int> &mp){
 vector<int> leftView(Node *root)
 {
    vector<int> ans;
-   map<int, int> mp;
+   unordered_map<int, int> mp;
    dfs(root, 0, 0, mp);
-   for(auto &it : mp){
-       ans.push_back(it.second);
+   for(int i = 0; i < mp.size(); i++){
+       ans.push_back(mp[i]);
    }
    return ans;
 }
