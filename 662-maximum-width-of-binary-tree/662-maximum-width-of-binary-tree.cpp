@@ -1,59 +1,45 @@
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
-        if(root == NULL) // if root is null 
-            return 0;   // simply return zero
+        if(root == NULL)
+            return 0;
         
-        int ans = 0; // variable to store answer
+        int res = 1;
+        queue<pair<TreeNode*, int>> q;
         
-        // queue for level order traveral
-        queue<pair<TreeNode*, int>> q; // pair contain { node, index}
+        // I am using intialising list
+        q.push({root, 0});      // also can use make_pair
         
-        q.push({root, 1}); // intially push root node 
-        
-        // Implementing BFS
-        while(q.empty() == false) // until queue is not empty
+        while(!q.empty())
         {
-            int size = q.size(); // take size of the queue
+            int cnt = q.size();
+            // start is the index of root node for first level
+            int start = q.front().second;
+            int end = q.back().second;
             
-            // tells us minimum index at particular level
-            int minAtLevel = q.front().second; 
+            res = max(res,end-start + 1);
             
-            // declaring minimum and maximum variable used for finding width
-            int mn, mx;
-            
-            // traverse from the queue
-            for(int i= 0; i < size; i++)
+            for(int i = 0; i <cnt; ++i)
             {
-                // changes index of level by decreasing minimum index
-                int curr_index = q.front().second - minAtLevel + 1; //+ 1 because we are using 1 based indexing,
+                pair<TreeNode*, int> p = q.front();
+                // we will use it while inserting it children
+                // left child will be 2 * idx + 1;
+                // right chils will be 2 * idx + 2;
+                int idx = p.second - start;
                 
-                // take out current node
-                TreeNode* node = q.front().first;
-                q.pop(); // pop from the queue
+                q.pop();
                 
-                // remember the formula we discussed
-            //width = (maximum index at level) - (minimum index at level) + 1
+                // if  left child exist
+                if(p.first->left != NULL)
+                    q.push({p.first->left, (long long)2 * idx + 1});
                 
-                if(i == 0) 
-                    mn = curr_index; // minimum index at level
-                
-                if(i == size - 1)
-                    mx = curr_index; //maximum index at level
-                
-                // push left and right for further calculation
-				
-                if(node -> left != NULL) //2   * i
-                    q.push({node -> left, 2LL * curr_index});
-                
-                if(node -> right != NULL) //2   * i  + 1
-                    q.push({node -> right, 2LL * curr_index + 1});
-                   
+                // if right child exist
+                if(p.first->right != NULL)
+                    q.push({p.first->right, (long long) 2 * idx + 2});
             }
-            ans = max(ans, mx - mn + 1); // update our answer
         }
         
-        return ans; // finally return our answer
+        return res;
         
     }
 };
