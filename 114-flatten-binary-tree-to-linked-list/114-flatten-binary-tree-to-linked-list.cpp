@@ -9,12 +9,7 @@ public:
         if(!left && !right)  return node;
         
         if(!left) return node;
-        // if(!right){
-        //     node->right = node->left;
-        //     node->left = NULL;
-        //     return node;
-        // }
-        TreeNode* temp = left;
+        TreeNode* temp = left; // Stupid mistake
         while(temp->right != NULL) temp = temp->right;
         temp->right = right;
         node->right = left;
