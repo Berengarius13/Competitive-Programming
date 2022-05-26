@@ -1,7 +1,15 @@
+/*
+* Do Backtrack dfs style
+* First verify the condition
+* Assume you have visisted the node and mark as visited
+* Then visit all its nodes, aka all other posibilities
+* Then unvisit that node
+*/
+
 class Solution {
 public:
     //pass board by reference
-    bool DFS(vector<vector<char>>& board, string word, int i, int j, int n) {
+    bool DFS(vector<vector<char>>& board, string &word, int i, int j, int n) {
 		//check if all the alphabets in the word is checked
         if(n == word.size()) return true; 
         
@@ -35,8 +43,6 @@ public:
         return false;
     }
 };
-
-
 /*
 class Solution {
 public:
