@@ -15,17 +15,20 @@ public:
         
         bool a = dfs(node->left, p, q);
         bool b = dfs(node->right, p, q);
+        // If there is an lca in both subtree then this case
         if(a&b){
             ans = node; return false;
         }
+        // If there is an lca in one tree then this case, compare with parent
         if(a|b){
             if(node->val == p->val || node->val == q->val){
                 ans = node; return false;
             }
         }
-        
+        // return true if node is equal to either of them
         if(node->val == p->val || node->val == q->val) return true;
         
+        // In any case return a|b;
         return a|b;
     }
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
