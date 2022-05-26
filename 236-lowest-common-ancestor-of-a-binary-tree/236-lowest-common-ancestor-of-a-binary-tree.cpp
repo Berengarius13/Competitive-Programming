@@ -23,9 +23,9 @@ public:
                 ans = node; return false;
             }
         }
-        if(!(a|b)){
-            if(node->val == p->val || node->val == q->val) return true;
-        }
+        
+        if(node->val == p->val || node->val == q->val) return true;
+        
         return a|b;
     }
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
