@@ -9,7 +9,7 @@ public:
     int max_sum = INT_MIN;
     
     int dfs(TreeNode* node){
-        if(node == NULL) return -10000;
+        if(node == NULL) return -1001;
         
         int b = dfs(node->left);
         int c = dfs(node->right);
