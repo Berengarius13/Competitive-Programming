@@ -13,10 +13,9 @@ public:
         
         int b = dfs(node->left);
         int c = dfs(node->right);
-        int parent_only = node->val;
-        // max_sum = maximum(b, c, b+c+parent_only);
-        max_sum = max(max_sum, maximum(b, c, b+c+parent_only));
-        int max_till_now = maximum(b+parent_only, c+parent_only, parent_only);
+        int parent_val = node->val;
+        max_sum = max(max_sum, maximum(b, c, b+c+parent_val));
+        int max_till_now = maximum(b+parent_val, c+parent_val, parent_val);
         if(max_till_now < 0) max_till_now = node->val;
         return max_till_now;
     }
