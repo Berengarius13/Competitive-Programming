@@ -1,3 +1,9 @@
+/* col => {L => values<sorted>} */ 
+/*
+* Idea is that simple, just make sure to use find
+* Remember map of map of vector, thus iterate carefully
+*/
+
 class Solution {
 public:
     int max_col = 0;
@@ -27,7 +33,6 @@ public:
     }
     vector<vector<int>> verticalTraversal(TreeNode* root) {
         unordered_map<int, unordered_map<int, vector<int>>> mp;
-        /* col => {L => values<sorted>} */ 
         dfs(root, 0, 0, mp);
         vector<vector<int>> ans;
         for(int i = min_col; i <= max_col; i++){
