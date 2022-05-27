@@ -14,14 +14,13 @@ public:
             
         }           // mp[col] is a un_map
         else{
-            // if(mp[col].find(i) == mp[col].end()){
-            //     vector<int> temp_vec = {node->val};
-            //     mp[col].insert({i, temp_vec});
-            // }
-            // else{
-            //     mp[col][i].push_back(node->val);
-            // }
-             mp[col][i].push_back(node->val);
+            if(mp[col].find(i) == mp[col].end()){
+                vector<int> temp_vec = {node->val};
+                mp[col].insert({i, temp_vec});
+            }
+            else{
+                mp[col][i].push_back(node->val);
+            }
         }
         dfs(node->left, i+1, col-1, mp);
         dfs(node->right, i+1, col+1, mp);
