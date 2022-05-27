@@ -1,10 +1,10 @@
 class Solution {
 public:
     int maximum(int a, int b, int c){
-        int temp_a = max(a,b);
-        int temp_b = max(b,c);
-        return max(temp_a, temp_b);
-        //return max(max(a,b), max(b,c));
+        // int temp_a = max(a,b);
+        // int temp_b = max(b,c);
+        // return max(temp_a, temp_b);
+        return max(max(a,b), max(b,c));
     }
     int max_sum = INT_MIN;
     
