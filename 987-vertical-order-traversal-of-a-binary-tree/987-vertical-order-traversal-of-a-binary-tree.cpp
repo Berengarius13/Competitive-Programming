@@ -12,7 +12,7 @@ public:
             temp_map.insert({i, temp_vec});
             mp.insert({col, temp_map});
             
-        }           // mp[col] is a un_map
+        }           
         else{
             if(mp[col].find(i) == mp[col].end()){
                 vector<int> temp_vec = {node->val};
