@@ -1,5 +1,12 @@
 /***
 * Sieve or eratosthenes
+* Time complexity
+* If just for divisors loop will run like this:-
+    n/2 + n/3 + n/4 + n/5 ... 1 (If we take all divisors)
+    = n(log(n))
+    here we are doing just for primes so:-
+    n/2 + n/3 + n/5 + n/7 
+    = n(log(log(n))) Will be time complexity
 */
 class Solution {
 public:
