@@ -15,7 +15,7 @@ public:
         vector<bool> isPrime(n, 1); // Assume every every number is prime initially
         isPrime[0] = isPrime[1] = 0; // Obvisously 1 and 2 are not prime
         for(int i = 2; i < sqrt(n); i++){
-            if(isPrime[i] == 1)               // Check only for prime numbers
+            if(isPrime[i] == 1)               // Check only for prime numbers, with this TC = nlogn
                 for(int j = (i+i); j < n; j = j+i)// Basically i ka table, 2i, 3i, 4i, 5i
                     isPrime[j] = 0;
         }
