@@ -1,3 +1,6 @@
+/** 
+ * Sliding window like rabin karp
+ */
 class Solution {
 public:
     bool isVovel(char c){
