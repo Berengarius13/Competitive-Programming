@@ -17,7 +17,7 @@ public:
         for(int i = 2; i < sqrt(n); i++){
             if(isPrime[i] == 1)               // Check only for prime numbers
                 for(int j = (i+i); j < n; j = j+i)// Basically i ka table, 2i, 3i, 4i, 5i
-                isPrime[j] = 0;
+                    isPrime[j] = 0;
         }
         int count = 0;
         for(auto it : isPrime)
