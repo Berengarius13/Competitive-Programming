@@ -1,19 +1,20 @@
 class Solution {
 public:
     bool checkPerfectNumber(int num) {
-        int sum = 0;   //maintain sum of the divisors
-        //loop through half the num value because we have to exclude the number itself
-        for(int i = 1; i <= num / 2; i++)
+        if ((num == 1) || (num < 0)) // edge cases - number is negitive or 1
+            return false;
+        
+        int i = 2;
+        int res = 1;
+        for (; i<sqrt(num); i++)
         {
-            //if its a divisor then it gets added to sum
-            if(num % i == 0)
-            {
-                sum = sum + i;
-            }
+            if (num % i == 0)
+                res += i + num/i;
         }
-        //self explanatory
-        if(sum == num)
-            return true;
-        return false;
+        
+        if ((int(sqrt(num)) >= i ) && (num % i == 0)) // edge case - number has a whole sqrt
+            res += i;
+        
+        return res == num;
     }
 };
