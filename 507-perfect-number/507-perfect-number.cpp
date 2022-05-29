@@ -1,20 +1,11 @@
 class Solution {
 public:
     bool checkPerfectNumber(int num) {
-        if ((num == 1) || (num < 0)) // edge cases - number is negitive or 1
-            return false;
-        
-        int i = 2;
-        int res = 1;
-        for (; i<sqrt(num); i++)
-        {
-            if (num % i == 0)
-                res += i + num/i;
-        }
-        
-        if ((int(sqrt(num)) >= i ) && (num % i == 0)) // edge case - number has a whole sqrt
-            res += i;
-        
-        return res == num;
+        vector<int>res(1,1);
+        for(int i=2;i<sqrt(num);i++) 
+            if(num%i==0) res.push_back(i), res.push_back(num/i);
+        int sum=0;
+        for(auto i:res) sum+=i;
+        return sum==num && num!=1;
     }
 };
