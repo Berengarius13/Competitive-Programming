@@ -1,4 +1,11 @@
 
+/** 
+ * iterate indexing from 1
+ * Make node of middle+1->next == NULL
+ * Reverse the linked list after it
+ * Append list2 in list1
+ * Each element of list2 after each element of list one
+ */
 class Solution {
 public:
     ListNode* reverseList(ListNode* hea) {
