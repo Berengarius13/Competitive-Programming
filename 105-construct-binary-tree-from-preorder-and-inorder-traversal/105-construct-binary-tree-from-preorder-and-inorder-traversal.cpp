@@ -1,8 +1,8 @@
 
 class Solution {
 public:
-    TreeNode* combi(vector<int> &preorder, vector<int> &inorder, unordered_map<int,int> &mp, int root, pair<int, int> range){ 
-        //if(root >= preorder.size()) return NULL;
+    TreeNode* combi(vector<int> &preorder, vector<int> &inorder, unordered_map<int,int> &mp, int root,                                      pair<int, int> range){ 
+
         if(range.second< range.first) return NULL;
         TreeNode* node = new TreeNode(preorder[root]);
         int deref_i = mp[preorder[root]]; // The root value in inorder
