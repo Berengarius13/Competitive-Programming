@@ -1,4 +1,24 @@
-
+/**
+ * How are we gonna tackle this one
+ * Pre: R->L->R and In: R->L->R
+ * So we know atleast first value of preorder is definately a ROOT
+ * Also in inorder we defintely know left side of root is left subtree
+   and right side of node is right subtree
+ * Using this knowledge we will keep a root of preorder
+ * We will deref that root to get root in inorder
+ * We will also track start and end from inorder aka range pair
+ * Deref root, [s to deref-1] is left subtree and 
+   [deref+1 to e] is right one
+ * Starting of that left subtree is root of that subtree aka root+1
+ * Ending node of left subtree + 1 is starting node of right subtree
+ * Pass them in recursion 
+ * We know from calculation if s > e we have reached a null node
+   thus return NULL value
+ * Recursion is quite simple, just create root node
+ * For it's left and right node start a recursion
+ * Attach them to root and return the node value
+ * Dry run few example, you will get the right inuition
+ */
 class Solution {
 public:
     TreeNode* combi(vector<int> &preorder, vector<int> &inorder, unordered_map<int,int> &mp, int root, pair<int, int> range){ 
