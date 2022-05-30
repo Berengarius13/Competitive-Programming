@@ -1,7 +1,7 @@
 
 class Solution {
 public:
-    TreeNode* combi(vector<int> &preorder, vector<int> &inorder, unordered_map<int,int> &mp, int root,                                      pair<int, int> range){ 
+    TreeNode* combi(vector<int> &preorder, vector<int> &inorder, unordered_map<int,int> &mp, int root, pair<int, int> range){ 
 
         if(range.second< range.first) return NULL;
         TreeNode* node = new TreeNode(preorder[root]);
