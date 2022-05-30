@@ -1,4 +1,4 @@
-
+/* Same as inorder and pre, just minor difference*/
 class Solution {
 public:
     TreeNode* combi(vector<int>& inorder, vector<int>& postorder, unordered_map<int,int> &mp,
