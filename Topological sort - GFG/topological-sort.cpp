@@ -8,7 +8,6 @@ class Solution
 	public:
 	void dfs(vector<int> adj[], int i,stack<int> &top , vector<int> &vis){
 	    vis[i] = 1;
-	    
 	    for(auto &node: adj[i]){
 	        if(vis[node]==0)
 	            dfs(adj, node, top, vis);
