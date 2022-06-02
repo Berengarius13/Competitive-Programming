@@ -23,22 +23,22 @@ public:
         int j = 0;
     // {
     //     while(j < matrix[0].size() && matrix[i][j] != -300){
-    //         ans.push_back(matrix[i][j]); matrix[i][j] == -300;
+    //         ans.push_back(matrix[i][j]); matrix[i][j] = -300;
     //         j++;
     //     }
     //     j--;
     //     while(i < matrix.size() && matrix[i][j] != -300){
-    //         ans.push_back(matrix[i][j]); matrix[i][j] == -300;
+    //         ans.push_back(matrix[i][j]); matrix[i][j] = -300;
     //         i++;
     //     }
     //     i--;
     //     while(j >= 0 && matrix[i][j] != -300){
-    //         ans.push_back(matrix[i][j]); matrix[i][j] == -300;
+    //         ans.push_back(matrix[i][j]); matrix[i][j] = -300;
     //         j--;
     //     }
     //     j++;
     //     while(i >= 0 && matrix[i][j] != -300){
-    //         ans.push_back(matrix[i][j]); matrix[i][j] == -300;
+    //         ans.push_back(matrix[i][j]); matrix[i][j] = -300;
     //         i--;
     //     }
     //     i++;
