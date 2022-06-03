@@ -30,7 +30,10 @@
  * Run every possibility
  * Remember it is impossible to memorize bottom up memorization
  * Return 1 at last node (base case)
- * Say you are 
+ * Say you are at parent node, then you have childs
+ * From DFS chart you know that at some node we can have only
+   max value
+ * So we sca through all it's child and get the maximum value  
  */
 
 class Solution {
