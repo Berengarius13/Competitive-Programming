@@ -25,7 +25,13 @@
     then make sure these hold true everywhere !!
  */
 
-
+/**
+ * DO DFS
+ * Run every possibility
+ * Remember it is impossible to memorize bottom up memorization
+ * Return 1 at last node (base case)
+ * Say you are 
+ */
 
 class Solution {
 public:
