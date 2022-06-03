@@ -33,7 +33,9 @@
  * Say you are at parent node, then you have childs
  * From DFS chart you know that at some node we can have only
    max value
- * So we sca through all it's child and get the maximum value  
+ * So we scan through all it's child and get the maximum value
+ * Store that in cache, you know from chart if it repeat again 
+   we return it!
  */
 
 class Solution {
@@ -58,9 +60,6 @@ public:
         for(int i = 0; i < nums.size(); i++){
             ans = max(dfs(nums , i, memo), ans);
         }
-        
-        for(auto it: memo)
-            cout<< it << " ";
         return ans;
     }
 };
