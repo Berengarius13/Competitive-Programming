@@ -1,3 +1,4 @@
+/* Dijkstras Shortest Path algorithm*/
 class Solution {
 public:
     typedef vector<vector<pair<int, int>>> graph;
