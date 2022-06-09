@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int knapsack(vector<int>& nums, int &target, int i, int sum, map<int, map<int,int>> &mp){
+    int knapsack(vector<int>& nums, int &target, int i, int sum, unordered_map<int, map<int,int>> &mp){
         if(mp.find(i) != mp.end()){
             if(mp[i].find(sum) != mp[i].end()) return mp[i][sum];
         }
@@ -14,7 +14,7 @@ public:
         return left+right;
     }
     int findTargetSumWays(vector<int>& nums, int target) {
-        map<int, map<int,int>> mp;
+        unordered_map<int, map<int,int>> mp;
         return knapsack(nums, target, 0, 0, mp);
     }
 };
