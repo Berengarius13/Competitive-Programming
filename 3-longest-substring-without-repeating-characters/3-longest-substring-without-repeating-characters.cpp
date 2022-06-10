@@ -11,11 +11,11 @@ public:
                 for(int k = start; k <= index; k++){
                     mp.erase(s[k]); temp=k+1;
                 }
-                start = temp;
+                start = index+1;
             }
             mp.insert({s[i], i});
-            int k = mp.size();
-            max_size = max(max_size, k);
+            int size = mp.size();
+            max_size = max(max_size, size);
         }
         return max_size;
     }
