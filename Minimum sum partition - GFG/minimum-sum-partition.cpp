@@ -8,13 +8,13 @@ class Solution{
   public:
     int kam = INT_MAX;
     int knapsack(int arr[], int n,int total ,int i, int sum, vector<vector<int>> &memo){
-        if(memo[i][sum] != -1) return memo[i][sum];
+        
         if(i == n){
             //cout<<sum<<" ";
             int k = (2*sum) - total;
             return abs(k);
         }
-        
+        if(memo[i][sum] != -1) return memo[i][sum];
         int a = knapsack(arr, n, total, i+1, sum+arr[i], memo);
         int b = knapsack(arr, n, total, i+1, sum, memo);
         
