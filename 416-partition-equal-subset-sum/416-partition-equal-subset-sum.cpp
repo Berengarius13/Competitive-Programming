@@ -1,3 +1,5 @@
+// Required subset twice is total sum
+// Similar to 01 knapscak
 class Solution {
 public:
     bool knapsack(vector<int> &nums, int &total, int i, int sum, vector<vector<int>> &memo){
@@ -15,6 +17,7 @@ public:
         int total = 0;
         for(auto &num : nums)
             total += num;
+        if((total & 1) == 1) return false;
         vector<vector<int>> memo(nums.size()+2, vector<int> (total+2, -1));
         return knapsack(nums, total, 0, 0, memo);
     }
