@@ -20,8 +20,8 @@ public:
                 start = temp;
                 mp.insert({s[i], i});
             }
-            
-            max_size = max(max_size, count);
+            int k = mp.size();
+            max_size = max(max_size, k);
         }
         return max_size;
     }
