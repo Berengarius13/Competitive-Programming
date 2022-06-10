@@ -6,16 +6,14 @@ public:
         int start = 0;
         for(int i = 0; i < s.size(); i++){
             if(mp.find(s[i]) != mp.end()){
-                int temp = 0;
                 int index = mp[s[i]];
                 for(int k = start; k <= index; k++){
-                    mp.erase(s[k]); temp=k+1;
+                    mp.erase(s[k]);
                 }
                 start = index+1;
             }
             mp.insert({s[i], i});
-            int size = mp.size();
-            max_size = max(max_size, size);
+            max_size = max(max_size,(int)mp.size());
         }
         return max_size;
     }
