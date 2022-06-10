@@ -1,3 +1,9 @@
+/* *
+ * Map is made such a way that it doesnt containt duplicate
+ * If duplicate occurs it deletes elements till first occurance of 
+   that duplicate
+ * Hence size of map is longest substring  
+ */
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
