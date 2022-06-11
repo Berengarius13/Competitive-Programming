@@ -13,10 +13,6 @@ public:
         return -1;
     }
     int search(vector<int>& nums, int target) {
-        // if(nums.size() == 1){
-        //     if(target == nums[0]) return 0;
-        //     else return -1;
-        // }
         int start = 0;
         int end = nums.size()-1;
         while(start < end){
