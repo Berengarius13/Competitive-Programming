@@ -1,3 +1,7 @@
+/* *
+ * DFS
+ * Sort and next element inserted should not be equal to previous
+ */
 class Solution {
 public:
     vector<vector<int>> ans;
