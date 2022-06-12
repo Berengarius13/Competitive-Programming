@@ -1,20 +1,20 @@
 class Solution {
 public:
     vector<vector<int>> ans;
-    void knapsack(vector<int> &nums, int i, vector<int> temp)
+    void dfs(vector<int> &nums, int begin, vector<int> temp)
     {
-        if(i == nums.size()){
-            ans.push_back(temp);
-            return;
+        ans.push_back(temp);
+        
+        for(int i = begin; i < nums.size(); i++){
+            temp.push_back(nums[i]);
+            dfs(nums, i+1, temp);
+            temp.pop_back();
         }
-        knapsack(nums, i+1, temp);
-        temp.push_back(nums[i]);
-        knapsack(nums, i+1,temp);
-        temp.pop_back();
+        
     }
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<int> temp;
-        knapsack(nums, 0, temp);
+        dfs(nums, 0, temp);
         return ans;
     }
 };
