@@ -1,26 +1,37 @@
+/* *
+ * DFS tree will have K nodes
+ * All representing k way to fill the continer
+ * DFS to get all possible subsets such that they need
+   to be divided in three parts 
+   --  --  --
+   -   --- ----
+   ---- - ---
+   All possible subset possibilities
+ */
 class Solution {
 public:
     int ans = INT_MAX;
-    void solve(int start, vector<int>& nums, vector<int>& v, int k){
-        if(start==nums.size()){
-            int maxm = INT_MIN;
-            for(int i=0;i<k;i++){
-                maxm = max(maxm,v[i]);
-            }
-            ans = min(ans,maxm);
+    
+    void dfs(vector<int>& nums, int i, int &k, vector<int> &container){
+        if(i == nums.size()){
+            int mx = INT_MIN;
+            for(auto &it : container)
+                mx = max(mx, it);
+            
+            ans = min(mx, ans);
             return;
         }
-        for(int i=0;i<k;i++){
-            v[i] += nums[start];
-            solve(start+1,nums,v,k);
-            v[i] -= nums[start];
+        
+        for(int p = 0; p < k; p++){
+            container[p] += nums[i];
+            dfs(nums, i+1, k, container);
+            container[p] -= nums[i];
         }
+         
     }
-    
-    int distributeCookies(vector<int>& nums, int k) { // nums is the cookies vector
-        int n = nums.size();
-        vector<int> v(k,0); // v is to store each sum of the k subsets
-        solve(0,nums,v,k);
+    int distributeCookies(vector<int>& cookies, int k) {
+        vector<int> container(k, 0);
+        dfs(cookies, 0,k, container);
         return ans;
     }
 };
