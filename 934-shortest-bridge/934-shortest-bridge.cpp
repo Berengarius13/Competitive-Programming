@@ -1,3 +1,12 @@
+/* *
+ * Optimally you want to do bfs and dfs
+ * Mark one island as visited  =2 and but them in queue
+ * Then do level order traversal, with each rise in level
+   signifying you are going closer to second island
+ * Do BFS on grid  
+ * Mark them as visited and return minimum
+ * Find first 1;
+ */
 class Solution {
 public:
     queue<pair<int,int>> q;
