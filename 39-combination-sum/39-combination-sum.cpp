@@ -1,3 +1,7 @@
+/* *
+ * Just like unbounded knapsack
+ * Just like coin change
+ */
 class Solution {
 public:
     vector<vector<int>> ans;
@@ -7,7 +11,6 @@ public:
         }
         if(i == nums.size()) return;
         
-        int a = 0;
         if(nums[i] <= target){
             temp.push_back(nums[i]);
             ubknapsack(nums, i,target-nums[i], temp);
