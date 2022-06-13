@@ -3,10 +3,10 @@ public:
     int uknapsack(vector<int>& coins, int i, int amount, int count,vector<vector<int>> &memo){
         if(memo[i][amount] != -1) return memo[i][amount];
         if(amount == 0) return 0;
-        if(i == coins.size()) return 1000000;
+        if(i == coins.size()) return INT_MAX -1;
         
         
-        int a = 1000000;
+        int a = INT_MAX -1;
         if(coins[i] <= amount)
             a = 1+ uknapsack(coins, i, amount-coins[i],count+1 ,memo);
         
@@ -18,7 +18,7 @@ public:
     int coinChange(vector<int>& coins, int amount) {
         vector<vector<int>> memo(coins.size()+1, vector<int> (amount+2, -1));
         int ans = uknapsack(coins, 0, amount, 0,memo);
-        if(ans < 1000000) 
+        if(ans < INT_MAX -1) 
             return ans;
         else
             return -1;
