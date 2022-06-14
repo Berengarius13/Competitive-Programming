@@ -1,3 +1,6 @@
+/*
+ * Same as lcs
+ */
 class Solution {
 public:
     int lcs(string &word1, string &word2, int i, int j, vector<vector<int>> &memo){
