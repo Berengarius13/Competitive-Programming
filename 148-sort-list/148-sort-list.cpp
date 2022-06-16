@@ -1,11 +1,17 @@
+/* * 
+ * Just do merge sort
+ * Write a function to merge two lists
+ * Write a function to find middle of a list
+ * 
+ */
 class Solution {
 public:
     ListNode* Sort(ListNode* headd){
         if(headd->next == NULL) return headd;
         ListNode* middle = middleNode(headd);
-        ListNode* next = headd;
-        while(next->next != middle) next = next->next;
-        next->next = NULL;
+        ListNode* before_middle = headd;
+        while(before_middle->next != middle) before_middle = before_middle->next;
+        before_middle->next = NULL;
         ListNode* a = Sort(headd);
         ListNode* b = Sort(middle);
         
