@@ -1,3 +1,8 @@
+/* * 
+ * Avoide dealing with negative case by using flag
+ * Make sure to remeber INT_MIN is greater than INT_MAX mod
+ * Now before making th digit just check two conditions
+ */
 class Solution {
 public:
     int reverse(int x) {
@@ -14,7 +19,7 @@ public:
             a = a*10 + lsb;
             x /= 10;
         }
-        if(flag) a = a*-1;
+        if(flag) a = a*(-1);
         return a;
     }
 };
