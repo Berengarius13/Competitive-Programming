@@ -2,7 +2,9 @@
  * Just do merge sort
  * Write a function to merge two lists
  * Write a function to find middle of a list
- * 
+ * Find just before middle element
+ * Make it null
+ * Run function again for middle and head
  */
 class Solution {
 public:
