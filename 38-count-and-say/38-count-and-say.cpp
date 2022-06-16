@@ -1,3 +1,11 @@
+/* *
+ * Initialize first string str
+ * Derive temp from str
+ * Use 2 pointer to keep track of repeating
+   element and their count
+ * Append count of last element in temp whenever 
+   a != b
+ */
 class Solution {
 public:
     string countAndSay(int n) {
@@ -16,7 +24,6 @@ public:
             }
             temp += to_string(count);
             temp += str[a];
-            // cout<<temp<<" ";
             str = temp;
         }
         return str;
