@@ -1,3 +1,9 @@
+/*
+* Count odds
+* Subtract one odd from each odd group
+* Add one odd which can be in center, 
+  only when there exist one odd group
+*/
 class Solution {
 public:
     int longestPalindrome(string s) {
