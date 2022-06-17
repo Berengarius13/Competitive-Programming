@@ -19,10 +19,6 @@ public:
     int findLength(vector<int>& nums1, vector<int>& nums2) {
         vector<vector<int>> memo(nums1.size()+1, vector<int> (nums2.size()+1, -1));
         lcs(nums1, nums2, 0, 0, memo);
-        // for(int i = 0; i < memo.size(); i++){
-        //     for(int j = 0; j < memo[0].size(); j++)
-        //         max_len = max(max_len, memo[i][j]);
-        // }
         return max_len;
     }
 };
