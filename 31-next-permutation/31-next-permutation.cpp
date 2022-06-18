@@ -2,12 +2,7 @@ class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
         for(int i = nums.size()-2; i >= 0; i--){
-            int maxi = i+1; // Find maximum value after i
-            for(int j = i+1; j < nums.size(); j++){
-                if(nums[maxi] < nums[j]){
-                    maxi = j;
-                }
-            }
+            
             // If maximum value is greater than i value
             // sort it with remaining value, aka put it in end
             // Cuz it is already sorted
