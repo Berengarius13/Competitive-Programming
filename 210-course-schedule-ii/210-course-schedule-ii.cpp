@@ -9,7 +9,7 @@ public:
         return g;
     }
     stack<int> stk;
-    bool dfs(graph &g, int node, vector<int> &vis, vector<int> par){
+    bool dfs(graph &g, int node, vector<int> &vis, vector<int> &par){
         vis[node] = 1;
         par[node] = 1;
         for(auto &cnode : g[node]){
@@ -21,6 +21,7 @@ public:
             }
             
         }
+        par[node] = 0;
         stk.push(node);
         return false;
     }
