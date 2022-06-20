@@ -41,7 +41,7 @@ public:
         
     }
     bool search(string word) {
-        Imposter
+        //Imposter
         Trie* node=root;
         return solve(word,node);
     }
