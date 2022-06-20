@@ -1,7 +1,7 @@
 class Solution {
 public:
     string lcs(string &str1, string &str2, int i, int j, vector<vector<string>> &memo){
-        if(memo[i][j] != ".") return memo[i][j];
+        if(memo[i][j] != "") return memo[i][j];
         if(i == str1.size() || j == str2.size()) return string();
         
         string a, b, c;
@@ -25,7 +25,7 @@ public:
         return string();
     }
     string shortestCommonSupersequence(string str1, string str2) {
-        vector<vector<string>> memo(str1.size()+1, vector<string> (str2.size()+1, "."));
+        vector<vector<string>> memo(str1.size()+1, vector<string> (str2.size()+1));
         string LCS = lcs(str1, str2, 0, 0, memo);
         int a,b,k; a = 0; b = 0; k = 0;
         string ans;
