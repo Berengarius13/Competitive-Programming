@@ -10,9 +10,9 @@ public:
                 dfs(graph, cnode, vis);
             }
         }
-        if(is_end){
+        if(is_end)
             vis[node] = 3;
-        }
+
         for(auto &cnode : graph[node]){
             if(vis[cnode] != 3) return;
         }
