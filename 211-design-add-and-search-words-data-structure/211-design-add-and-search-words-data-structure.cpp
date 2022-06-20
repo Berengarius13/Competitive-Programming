@@ -1,4 +1,4 @@
-#define Imposter ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
 class Trie{
 public:
     Trie *trieNodes [26];
@@ -12,7 +12,6 @@ public:
     }
     
     void addWord(string word) {
-        Imposter
         Trie* node=root;
         for (char c:word){
             if (node->trieNodes[c-'a']==NULL){
@@ -23,7 +22,6 @@ public:
         node->isEnd=true;
     }
     bool solve(string word, Trie* node){
-        Imposter
         for (int i=0;i<word.size();i++){
             if (word[i]=='.'){
                 for (char c='a';c<='z';c++){
@@ -41,7 +39,6 @@ public:
         
     }
     bool search(string word) {
-        //Imposter
         Trie* node=root;
         return solve(word,node);
     }
