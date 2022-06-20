@@ -1,3 +1,8 @@
+/*
+ * DFS colour terminal
+ * If a parents all terminal are coloured, color it 
+   and put it in ans
+*/
 class Solution {
 public:
     vector<int> ans;
