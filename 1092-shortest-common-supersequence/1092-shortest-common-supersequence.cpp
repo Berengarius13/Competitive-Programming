@@ -1,3 +1,8 @@
+/* *
+ * Print LCS, any one will suffice
+ * Merge array like linked list
+ * If value is in lcs insert it only once
+ */
 class Solution {
 public:
     string lcs(string &str1, string &str2, int i, int j, vector<vector<string>> &memo){
@@ -6,7 +11,7 @@ public:
         
         string a, b, c;
         if(str1[i] == str2[j]){
-            a = str1[i] + lcs(str1, str2, i+1, j+1, memo);
+            a =  lcs(str1, str2, i+1, j+1, memo) + str1[i];
             memo[i][j] = a;
             return a;
         }
@@ -27,6 +32,7 @@ public:
     string shortestCommonSupersequence(string str1, string str2) {
         vector<vector<string>> memo(str1.size()+1, vector<string> (str2.size()+1));
         string LCS = lcs(str1, str2, 0, 0, memo);
+        reverse(LCS.begin(), LCS.end());
         int a,b,k; a = 0; b = 0; k = 0;
         string ans;
         while(k < LCS.size()){
