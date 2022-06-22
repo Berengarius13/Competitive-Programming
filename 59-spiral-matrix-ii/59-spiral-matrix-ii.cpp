@@ -1,3 +1,7 @@
+/*
+* Same dfs used earlier just use a counter this time
+* 0 signifies it matrix is unvisited
+*/
 class Solution {
 public:
     bool dfs(vector<vector<int>> &matrix, int i, int j, int counter){
