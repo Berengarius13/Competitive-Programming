@@ -1,3 +1,9 @@
+/*
+* Merge overlapping interval
+* One variation just put the new interval just before
+  it's next greater interval
+* All intervals are sorted  
+*/
 class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
