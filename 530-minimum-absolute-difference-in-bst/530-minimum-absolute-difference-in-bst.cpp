@@ -1,4 +1,6 @@
-
+/*
+* Remember previous difference
+*/
 class Solution {
 public:
     int min_diff = INT_MAX;
