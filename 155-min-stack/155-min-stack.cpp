@@ -1,3 +1,7 @@
+/*
+* Use pair in stack
+* Keep track of minimum element at top
+*/
 class MinStack {
 public:
     stack<pair<int,int>> stak;
