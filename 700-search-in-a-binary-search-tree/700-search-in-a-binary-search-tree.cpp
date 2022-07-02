@@ -1,4 +1,6 @@
-
+/*
+* Left is smaller than root and right is greater
+*/
 class Solution {
 public:
     TreeNode* ans = NULL;
