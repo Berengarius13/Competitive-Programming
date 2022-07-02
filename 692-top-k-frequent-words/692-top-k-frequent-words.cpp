@@ -22,7 +22,7 @@ public:
             mp[word]++;
        
         priority_queue<pair<int, string>, vector<pair<int, string>>, comp> pq;
-        for(auto [word, frequency] : mp){
+        for(auto &[word, frequency] : mp){
             pq.push(make_pair(frequency, word));
             if(pq.size()>k)
                 pq.pop();
