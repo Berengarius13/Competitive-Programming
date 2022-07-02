@@ -1,5 +1,7 @@
 /* * 
-* 
+* Maintain a prefix multiple vector x a b c;
+* Maintain a suffix multiple vector p q r x;
+* Multiply these two vectors
 */
 class Solution {
 public:
