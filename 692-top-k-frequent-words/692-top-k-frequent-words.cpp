@@ -5,13 +5,6 @@ public:
         public:
         bool operator()(pair<int, string> &p1, pair<int, string> &p2){
             if(p1.first == p2.first){
-                // int i = 0; int j = 0;
-                // while(i < p1.second.size() && j < p2.second.size()){
-                //     if(p1.second[i] != p2.second[j])
-                //         return p1.second[i] < p2.second[j];
-                //     i++; j++;
-                // }
-                // return p1.second.size() < p2.second.size();
                 return p1.second < p2.second;
             }
             return p1.first > p2.first;
