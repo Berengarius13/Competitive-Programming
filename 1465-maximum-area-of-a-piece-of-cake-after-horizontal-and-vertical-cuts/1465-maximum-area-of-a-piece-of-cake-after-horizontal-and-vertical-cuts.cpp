@@ -1,3 +1,7 @@
+/*
+* Just sort and find max gaps and multiply
+* Remember the formula to multipley to numbers that can overflow
+*/
 class Solution {
 public:
     typedef long long ll;
