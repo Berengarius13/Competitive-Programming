@@ -7,7 +7,7 @@ public:
 int dfs(vector<vector<int>>& g, int i, int j, int v) {
     if (min(i, j) < 0 || i >= g.size() || j >= g[i].size() || g[i][j] <= v)
         return 0;
-    return dp[i][j] ? dp[i][j] : dp[i][j] = (1LL + dfs(g, i + 1, j, g[i][j]) + dfs(g, i - 1, j, g[i][j]) 
+    return dp[i][j] ? dp[i][j] : dp[i][j] = (1LL + dfs(g, i + 1, j, g[i][j]) + dfs(g, i - 1, j,                             g[i][j]) 
         + dfs(g, i, j + 1, g[i][j]) + dfs(g, i, j - 1, g[i][j])) % mod;
 }
 int countPaths(vector<vector<int>>& g) {
