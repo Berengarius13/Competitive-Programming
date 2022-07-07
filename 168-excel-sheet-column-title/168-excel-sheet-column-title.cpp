@@ -1,3 +1,6 @@
+/*
+* Remember to reduce n by 1 before solving for factors
+*/
 class Solution {
 public:
     string convertToTitle(int n) {
