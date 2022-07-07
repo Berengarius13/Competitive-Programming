@@ -1,3 +1,6 @@
+/*
+* Pair to remember first position and if repeated or not
+*/
 class Solution {
 public:
     int firstUniqChar(string s) {
