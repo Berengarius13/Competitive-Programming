@@ -2,7 +2,7 @@ class Solution {
 public:
     int lcs(string &s1, string &s2, string &s3, int i, int j, int k, vector<vector<int>> &memo){
         if(memo[i][j] != -1) return memo[i][j];
-        if(k == s3.size()) return 0;
+
         int a = 0; int b = 0;
         if(i < s1.size() && s1[i] == s3[k])
             a = 1 + lcs(s1, s2, s3, i+1, j, k+1, memo);
