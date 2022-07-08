@@ -1,3 +1,6 @@
+/*
+* DP, make case if a[i] == c[k] || b[j] == c[k]
+*/
 class Solution {
 public:
     int lcs(string &s1, string &s2, string &s3, int i, int j, int k, vector<vector<int>> &memo){
