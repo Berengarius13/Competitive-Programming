@@ -8,7 +8,7 @@ public:
         
         for(int p = 0; p < square.size(); p++){
             square[p] += nums[i];
-            if(square[p] <= k){
+            if((p == 0 || square[p-1] != 0) &&  square[p] <= k){
                 if(dfs(nums, i+1, square, k)) return true;
             }
             square[p] -= nums[i];
