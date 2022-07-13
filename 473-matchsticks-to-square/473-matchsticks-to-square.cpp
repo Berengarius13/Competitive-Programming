@@ -2,12 +2,6 @@ class Solution {
 public:
     bool dfs(vector<int> &nums, int i, vector<int> &square, int &k){
         if(i == nums.size()){
-            // int beg = *square.begin();
-            // if(beg == 0) return false;
-            // for(auto &it : square){
-            //     if(it != beg) return false;
-            //     beg = it;
-            // }
             return true;
         }
         
