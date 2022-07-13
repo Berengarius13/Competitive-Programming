@@ -22,7 +22,6 @@ public:
         sum = sum/4;
         sort(nums.begin(), nums.end(), greater <>()); //
         vector<int> square(4, 0);
-        if(dfs(nums, 0, square, sum)) return true;
-        return false;
+        return dfs(nums, 0, square, sum);
     }
 };
