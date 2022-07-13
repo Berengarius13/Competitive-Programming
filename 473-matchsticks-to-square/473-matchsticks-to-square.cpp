@@ -19,7 +19,7 @@ public:
         sort(nums.begin(), nums.end(), greater <>());
         int sum = 0;
         sum = accumulate(nums.begin(), nums.end(), sum);
-        if(nums.size() < 4) return false;
+        if(nums.size() < 4 || sum % 4 != 0 ) return false;
         sum = sum/4;
         vector<int> square(4, 0);
         if(dfs(nums, 0, square, sum)) return true;
