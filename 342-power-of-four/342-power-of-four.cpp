@@ -1,15 +1,11 @@
+/*
+* Power of 4 is power of 2
+* Power of 4 - 1, is divisible by 3 can be prooved
+using binomial theorem
+*/
 class Solution {
 public:
-    bool isPowerOfFour(int n) {
-        if(n <= 0) return false;
-        if(n == 1) return true;
-        if(not(n % 10 == 4 || n % 10 == 6)) return false;
-        unordered_set<int> s;
-        int val = 1; s.insert(val);
-        while(val <= INT_MAX/4){
-            val *= 4;
-            s.insert(val);
-        }
-        return s.find(n) != s.end();
+    bool isPowerOfFour(int num) {
+        return num > 0 && (num & (num - 1)) == 0 && (num - 1) % 3 == 0;
     }
 };
