@@ -4,16 +4,14 @@ public:
     string getPermutation(int n, int k) {
         k = k - 1;
         string ans;
-        set<int> mp;
+        vector<int> mp;
         for(int i = 0; i < n; i++)
-            mp.insert(i+1);
+            mp.push_back(i+1);
         
         while(n){
             int priority = k/fact[n-1];
-            auto it = mp.begin();
-            advance(it, priority);
-            ans  += *it + '0';
-            mp.erase(it);
+            ans  +=  mp[priority] + '0';
+            mp.erase(mp.begin()+priority);
             k = k - (fact[n-1]* priority);
             n = n-1;
         }
