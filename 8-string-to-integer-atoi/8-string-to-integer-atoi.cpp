@@ -1,3 +1,6 @@
+/*
+* Make cases and solve
+*/
 class Solution {
 public:
     bool is_digit(char ch){
