@@ -1,3 +1,7 @@
+/*
+* The trick here is to remember to start searching from
+top right corner
+*/
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
