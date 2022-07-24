@@ -1,3 +1,8 @@
+/*
+* Instead of making 2 mcm calls optimize
+* No need to make "a+b" mcm call for whole just
+  check if a is palindrome or not then make mcm call  
+*/
 class Solution {
 public:
     bool is_palindrome(int i, int j, string &s){
