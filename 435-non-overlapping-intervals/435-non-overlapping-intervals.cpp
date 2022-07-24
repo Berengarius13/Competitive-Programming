@@ -1,3 +1,6 @@
+/*
+* Make cases and solve
+*/
 class Solution {
 public:
     static bool comp(vector<int> &a, vector<int> &b){
