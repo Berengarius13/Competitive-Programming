@@ -1,3 +1,8 @@
+/*
+* Like word break 2
+* Dfs begin type
+* Build string along the way and do operations
+*/
 class Solution {
 public:
     vector<vector<string>> ans;
