@@ -1,5 +1,5 @@
 /*
-* Make cases and solve
+* Make cases in terms of s1 and s2
 */
 class Solution {
 public:
