@@ -7,6 +7,10 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+/*3 cases, if node = eaither p or q, return true, 
+if we get true from both branches our parent is lca,
+if only one branch compater with with parent,
+see if parent is lca, return a+b*/
 class Solution {
 public:
     TreeNode* ans;
