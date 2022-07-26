@@ -1,10 +1,5 @@
 class Solution {
 public:
-    bool isDigit(char ch){
-        int a = ch - '0';
-        if(a >= 0 && a <= 9) return true;
-        return false;
-    }
     int calculate(string s) {
         s.push_back('+');
         stack<char> operand;
