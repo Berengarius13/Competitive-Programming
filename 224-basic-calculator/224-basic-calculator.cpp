@@ -13,7 +13,7 @@ public:
         int num = 0;
         for(int i = 0; i < s.size(); i++){
             if(s[i] == ' ') continue;
-            if(isDigit(s[i])){
+            if(isdigit(s[i])){
                 num = num * 10 + (s[i] - '0');
                 continue;
             }
