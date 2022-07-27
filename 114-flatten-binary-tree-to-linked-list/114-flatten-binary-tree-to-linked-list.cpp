@@ -1,4 +1,11 @@
 /* Use post order traversal cuz you need access to left and right node, form middle node to connect */
+/*
+* Lets say L-N-R, in recursion just think result of one subproblem
+* Connect R to the end_node-> right (of left side)
+* Node left is null and node right is left
+* make case if left is null, then just return node
+* remember to reach the left most end use of temporary var 
+*/
 class Solution {
 public:
     TreeNode* dfs(TreeNode* node){
