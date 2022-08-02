@@ -1,17 +1,16 @@
 class Solution {
 public:
     string removeDuplicates(string s) {
-        int begin = 0;
         stack<char> stk;
         for(int i = 0; i < s.size(); i++){
             if(stk.empty())
                 stk.push(s[i]);
-            else if(s[i] == stk.top()){
+            
+            else if(s[i] == stk.top())
                 stk.pop();
-            }
-            else if(s[i] != stk.top()){
+            
+            else if(s[i] != stk.top())
                 stk.push(s[i]);
-            }
         }
         
         string ans;
