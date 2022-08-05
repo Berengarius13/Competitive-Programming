@@ -1,3 +1,6 @@
+/*
+* Classic just like Jump game
+*/
 class Solution {
 public:
     int jumpgame(vector<int> &cost, int i, vector<int> &memo){
