@@ -1,6 +1,11 @@
 /*
 * No need to calculate running sum
-* Just calculate the minim health needed
+* Just calculate the minimum health needed
+* Instead think in terms of what is minimum health needed
+  to reach at the end
+* At last node we need at least 1 health 
+  so at last node value should be max(1, 1 - arr[i][j]);
+* We will always choose path where we need minimum health  
 */
 class Solution {
 public:
