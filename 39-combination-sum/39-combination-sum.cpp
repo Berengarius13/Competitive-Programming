@@ -1,26 +1,25 @@
-/* *
- * Just like unbounded knapsack
- * Just like coin change
- */
 class Solution {
 public:
     vector<vector<int>> ans;
-    void ubknapsack(vector<int>& nums, int i,int target, vector<int> temp){
-        if(target == 0){
-            ans.push_back(temp); return;
+    void dfs(vector<int> &nums, int begin, int sum, int target, vector<int> temp){
+        if(sum > target) return;
+        if(sum == target){
+            ans.push_back(temp);
+            return;
         }
-        if(i == nums.size()) return;
         
-        if(nums[i] <= target){
+        for(int i = begin; i < nums.size(); i++){
             temp.push_back(nums[i]);
-            ubknapsack(nums, i,target-nums[i], temp);
+            sum += nums[i];
+            dfs(nums, i, sum, target,temp);
+            sum -= nums[i];
             temp.pop_back();
         }
-        ubknapsack(nums, i+1,target, temp);
+        
     }
-    vector<vector<int>> combinationSum(vector<int>& nums, int target) {
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         vector<int> temp;
-        ubknapsack(nums, 0,target, temp);
-        return ans;
+        dfs(candidates, 0, 0,target,temp);
+            return ans;
     }
 };
