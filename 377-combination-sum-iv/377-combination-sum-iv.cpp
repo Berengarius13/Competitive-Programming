@@ -1,19 +1,19 @@
 class Solution {
- 
-    int dp[201][1001];
-    int f(int i, int k , vector<int> & nums){
-        if( i == nums.size()) return(k ==0);
-        if(dp[i][k]!= -1 ) return dp[i][k];
-        int p =0;
-        int np = f(i+1 ,k,nums);
-        if(k>=nums[i])
-            p=f(0,k-nums[i],nums);
-        return dp[i][k] =  p + np;
-    }
 public:
-    int combinationSum4(vector<int>& nums, int target) {
+    int uknapsack(vector<int> &nums, int i, int target, vector<vector<int>> &memo){
+        if(target == 0) return 1;
+        if(i == nums.size()) return 0;
+        if(memo[i][target] != -1) return memo[i][target];
+        int a = 0;
+        if(nums[i] <= target){
+            a = uknapsack(nums, 0, target-nums[i], memo);
+        }
+        int b = uknapsack(nums, i+1, target, memo);
         
-        memset(dp,-1,sizeof(dp));
-        return f(0,target , nums);
+        return memo[i][target]=a+b;
+    }
+    int combinationSum4(vector<int>& nums, int target) {
+        vector<vector<int>> memo(nums.size()+1, vector<int> (target+1, -1));
+        return uknapsack(nums, 0, target,memo);
     }
 };
