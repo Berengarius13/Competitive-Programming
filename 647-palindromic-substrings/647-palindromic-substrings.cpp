@@ -1,3 +1,7 @@
+/*
+* Same as longest palindoromic substring
+* To avoide duplicates make set 
+*/
 class Solution {
 public:
      set<pair<int,int>> mp;
