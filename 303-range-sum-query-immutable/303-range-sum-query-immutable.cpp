@@ -1,15 +1,17 @@
 class NumArray {
 public:
-    vector<int> numbers;
+    vector<int> accumulate;
     NumArray(vector<int>& nums) {
-        numbers = nums;
+        int sum = 0;
+        for(auto num : nums){
+            sum += num;
+            accumulate.push_back(sum);
+        }
     }
     
     int sumRange(int left, int right) {
-        int temp = 0;
-        for(int i = left; i <= right; i++)
-            temp += numbers[i];
-        return temp;
+        if(left == 0) return accumulate[right];
+        return accumulate[right]-accumulate[left-1];
     }
 };
 
