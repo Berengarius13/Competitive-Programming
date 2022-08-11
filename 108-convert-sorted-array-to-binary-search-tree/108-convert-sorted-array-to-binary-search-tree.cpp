@@ -1,9 +1,50 @@
+
+class Solution {
+public:
+    TreeNode* sortedArrayToBST(vector<int>& nums) {
+        if(nums.size() == 0) return NULL;
+        if(nums.size() == 1)
+            return new TreeNode(nums[0]);
+        
+        int middle = nums.size()/2;
+        
+        TreeNode * root = new TreeNode(nums[middle]);
+        
+        vector<int> left (nums.begin(), nums.begin()+middle);
+        vector<int> right  (nums.begin()+middle+1, nums.end());
+        
+        root->left = sortedArrayToBST(left);
+        root->right = sortedArrayToBST(right);
+        
+        return root;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Make range and root variable
  * If sum of range is odd root is n/2+1
  * if range is even n/2 is root
+ * This logic depends on odd and and even makes difficuilt
  */
 
+/*
 class Solution {
 public:
     bool isodd(int num){
@@ -44,3 +85,4 @@ public:
         return build(nums, root, range);
     }
 };
+*/
