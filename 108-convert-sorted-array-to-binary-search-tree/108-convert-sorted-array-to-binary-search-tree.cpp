@@ -1,3 +1,8 @@
+/**
+ * Make range and root variable
+ * If sum of range is odd root is n/2+1
+ * if range is even n/2 is root
+ */
 
 class Solution {
 public:
