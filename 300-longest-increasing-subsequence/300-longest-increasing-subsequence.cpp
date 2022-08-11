@@ -1,3 +1,10 @@
+/*
+* Simple recursion 2 cases
+* Consider or don't consider
+* If increases then we either consider or skip
+* If decreases then we skip 
+* Implement this simple logic
+*/
 class Solution {
 public:
     int lis(vector<int> &nums, int i, int j, vector<vector<int>> &memo){
