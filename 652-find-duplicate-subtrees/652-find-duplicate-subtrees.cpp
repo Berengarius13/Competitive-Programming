@@ -4,12 +4,10 @@ public:
     vector<TreeNode*> ans;
     unordered_map<string, vector<TreeNode*>> mp;
     string dfs(TreeNode* root){
-        if(root == NULL) return "N";
+        if(root == NULL) return "";
         
-        string left = dfs(root->left);
-        string right = dfs(root->right);
         
-        string curr = " "+left +to_string(root->val)+right;
+        string curr = "("+ dfs(root->left) +to_string(root->val)+dfs(root->right) +")";
         mp[curr].push_back(root);
         return curr;
     }
