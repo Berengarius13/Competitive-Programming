@@ -4,7 +4,7 @@ public:
     vector<TreeNode*> ans;
     unordered_map<string, vector<TreeNode*>> mp;
     string dfs(TreeNode* root){
-        if(root == NULL) return "";
+        if(root == NULL) return string();
         
         
         string curr = "("+ dfs(root->left) +to_string(root->val)+dfs(root->right) +")";
