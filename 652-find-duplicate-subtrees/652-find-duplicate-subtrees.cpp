@@ -1,4 +1,9 @@
-
+/*
+* Make hash of string
+* Use "("            ")" brackets so that
+  hash is unique everytime
+*   
+*/
 class Solution {
 public:
     vector<TreeNode*> ans;
