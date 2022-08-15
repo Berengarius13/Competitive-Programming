@@ -10,7 +10,7 @@ public:
             {'D', 500},
             {'M', 1000},
         };
-        
+        cout<<dict[s[s.size()]];
         int result = 0;
         for (int i = 0; i < s.size(); i++) {
             if (dict[s[i]] < dict[s[i+1]]) result -= dict[s[i]];
