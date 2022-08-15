@@ -1,3 +1,9 @@
+/*
+* The trick is to calculate all possible palindromic substrings
+  in a dp table and simply look em up from dp table and get our answer
+  O(N^2) + O(N^2)
+  
+*/
 class Solution {
 public:
 	vector<vector<int>> dp1;
