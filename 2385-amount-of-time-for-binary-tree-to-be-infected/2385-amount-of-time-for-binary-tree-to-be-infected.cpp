@@ -1,4 +1,7 @@
-
+/*
+* DFS return max distance from infected node
+* On left side calculate method to calculte distance to infected node
+*/
 class Solution {
 public:
     pair<int, int> dfs(TreeNode* node, const int &start){
