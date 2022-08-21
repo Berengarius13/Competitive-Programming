@@ -12,14 +12,13 @@
 
 class Solution {
 public:
-    int dfs(TreeNode* node, int i){
-        if(node == NULL) return i;
-        int a = 0; int b = 0;
-        a = dfs(node->left, i+1);
-        b = dfs(node->right, i+1);
-        return max(a,b);
+    int dfs(TreeNode* node){
+        if(node == NULL) return 0;
+        int a = dfs(node->left);
+        int b = dfs(node->right);
+        return max(a,b)+1;
     }
     int maxDepth(TreeNode* root) {
-        return dfs(root, 0);
+        return dfs(root);
     }
 };
