@@ -1,6 +1,7 @@
 /*
 * Treee is rooted and directed
 * Make an undirected graph
+* Start dfs from burning edge
 */
 class Solution {
 public:
