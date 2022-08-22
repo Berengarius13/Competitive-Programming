@@ -1,3 +1,6 @@
+/*
+* BFS and take care of edge cases !
+*/
 class Solution {
 public:
     bool isValid (vector<vector<int>> &grid,int x, int y){
