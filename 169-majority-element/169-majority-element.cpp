@@ -1,35 +1,23 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        int element = 0;
-        int count = 0;
-        for(auto &num: nums){
-            if (count  == 0)
-                element = num;
-            if(element == num)
-                count++;
-            else
-                count--;
+        vector<int> setCount(32, 0);
+        int n = nums.size();
+        for(auto num : nums){
+            unsigned int mask = 1;
+            for(int i = 0; i < 32; i++){
+                if((num & mask)){
+                    setCount[i]++;
+                }
+                mask = mask << 1;
+            }
         }
-        return element;
-    }
-};
-/*
-class Solution {
-public:
-    int majorityElement(vector<int>& nums) {
-        unordered_map<int, int> m;
-        for(auto &num : nums){
-            m[num]++;
-        }
-        int ans;
-        for(auto &it : m){
-            if(it.second> (nums.size()/2))
-            {
-                ans = it.first;
+        int ans = 0; 
+        for(unsigned int i = 0, mask = 1 ; i < 32; i++, mask = mask << 1){
+            if(setCount[i] > n/2){
+                ans |= mask;
             }
         }
         return ans;
     }
 };
-*/
