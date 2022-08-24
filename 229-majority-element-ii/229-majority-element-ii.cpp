@@ -3,7 +3,8 @@
 * There can be no majority elelmnt, 1 or two 
 * n/3 + 1 (+) n/3 + 1 (+) x = n
   then x = n/3 - 2
-* So it is impossible to have majority elements more than 2    
+* So it is impossible to have majority elements more than 2   
+* Similar to moore voting algorithm
 */
 class Solution {
 public:
