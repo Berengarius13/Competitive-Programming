@@ -63,7 +63,6 @@ public:
                 num = num % 26;
             num = num + asci;
             num = num % 26;
-            cout<<num<<" ";
             s[i] = (char) num + 'a';
             
         }
