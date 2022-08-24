@@ -15,23 +15,6 @@ So i will do line[left]-- and line[right+1]++.
 */
 class Solution {
 public:
-    // void shift_letter(string &s, vector<int> &change){
-    //     for(int i = 0; i < s.size(); i++){
-    //         int asci = (int)s[i] - 'a';
-    //         int num = change[i];
-    //         if(num < 0){
-    //             num = abs(num);
-    //             num = num % 26;
-    //             num = -num + 26;
-    //         }
-    //         else
-    //             num = num % 26;
-    //         num = num + asci;
-    //         num = num % 26;
-    //         cout<<num<<" ";
-    //         s[i] = (char) num + 'a';
-    //     }
-    // }
     string shiftingLetters(string s, vector<vector<int>>& shifts) {
         vector<int>  prePrefix (s.size()+1, 0);
         for(auto &shift : shifts){
