@@ -1,3 +1,8 @@
+/*
+* Call recursion whenever you reach '['
+* Return whenever you reach ']'
+* Process the inside
+*/
 class Solution {
 public:
     pair<string,int> func(string &s, int begin){
