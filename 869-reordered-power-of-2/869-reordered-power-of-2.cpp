@@ -1,3 +1,6 @@
+/*
+* Simple sorting and comparing
+*/
 class Solution {
 public:
     bool reorderedPowerOf2(int n) {
