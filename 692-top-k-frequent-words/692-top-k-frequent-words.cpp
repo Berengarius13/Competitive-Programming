@@ -1,4 +1,6 @@
-
+/*
+* Greater int leads to min heap, mimic that only
+*/
 class Solution {
 public:
     class comp{
