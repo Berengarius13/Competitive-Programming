@@ -1,3 +1,45 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Same as unique path3 or word search
+ * Just there is no backtrack here
+ * We usually do backtrack to not messup grid
+ * Here we want to mess it up so that is we just do casual dfs
+ * We run to every corner of island and after doing it we make it 
+ * DFS
+ */
+
 class Solution {
 public:
     bool dfs(vector<vector<char>>& grid, int i, int j){
