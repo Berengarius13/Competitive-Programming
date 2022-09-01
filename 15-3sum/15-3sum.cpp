@@ -1,3 +1,15 @@
+/*
+* O(N^2 long (n)) approach
+* Use of unordered map
+* see a + b + c = 0;
+* So what you can do is pick a value of a and find 
+  all the pairs of b and c which satisfies the condition
+* So pick a, reduce it's count, so it can't be used again
+* Next iterate through unordered map and which you pick as b
+  mark it used and find value of c in map
+* Store it in set as there will be cases where duplicates might
+  occur
+*/
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
