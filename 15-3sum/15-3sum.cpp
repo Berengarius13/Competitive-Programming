@@ -11,7 +11,7 @@
   occur
 */
 /*
-There exist a 4 sum approach
+There exist a 2 pointer approach
 */
 class Solution {
 public:
