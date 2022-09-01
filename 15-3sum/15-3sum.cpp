@@ -10,6 +10,9 @@
 * Store it in set as there will be cases where duplicates might
   occur
 */
+/*
+There exist a 4 sum approach
+*/
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
