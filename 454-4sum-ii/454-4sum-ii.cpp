@@ -1,3 +1,7 @@
+/*
+* store all possible values  of c + d
+* Look up in array all possible values of -a-b
+*/
 class Solution {
 public:
     int fourSumCount(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3, vector<int>& nums4) 
