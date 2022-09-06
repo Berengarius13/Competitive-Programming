@@ -1,3 +1,6 @@
+/*
+* Simple modification to 2 pointer method for 3 sum question
+*/
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
