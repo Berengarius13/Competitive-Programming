@@ -1,3 +1,16 @@
+/*
+* Calculate prefix sum of grid
+* Assume 
+        a b c
+        d e f
+* Step 1
+        a a+b a+b+c
+        d d+e d+e+f
+* Step 2
+        a     a+b      a+b+c
+        a+d   a+b+d+e  a+b+c+d+e+f
+* Then derive formula to use this and get sum of particular block        
+*/
 class Solution {
 public:
     vector<vector<int>> matrixBlockSum(vector<vector<int>>& matrix, int k) {
