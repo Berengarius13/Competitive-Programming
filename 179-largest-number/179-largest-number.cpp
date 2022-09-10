@@ -1,3 +1,11 @@
+/*
+* Very simple intuition
+* Just make hash of each number
+  12 -> 121212121212
+  123 -> 123123123123
+  Each hash should be less than 1e9
+  Simply reverse sort and get answer
+*/
 class Solution {
 public:
     string largestNumber(vector<int>& nums) {
@@ -32,7 +40,7 @@ public:
             if(nums[it->second] != 0) flag = true;
             ans += to_string(nums[it->second]);
         }
-        if(!flag){
+        if(!flag){ // Edge case when we are given only 0
             return "0";
         }
         return ans;
