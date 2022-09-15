@@ -1,3 +1,14 @@
+/*
+* Bulletproof logic
+* Use bricks every time
+* The point when number of bricks are less than we switch
+* If ladders are left use it for the hightest priority till now
+  only
+* If last hightest priority is greater than current to_climb 
+  use ladders there instead
+* Else simply use ladder for where you are standing
+* Fuck the urge to look at discussion think of logic yourself
+*/
 class Solution {
 public:
     int furthestBuilding(vector<int>& heights, int bricks, int ladders) {
@@ -12,7 +23,7 @@ public:
             int to_climb = climb[i];
             if(to_climb == 0) continue;
             if(to_climb <= bricks){
-                bricks -= to_climb;
+                bricks -= to_climb; // use bricks
                 pq.push(to_climb);
             }
             else if(ladders > 0){
@@ -20,11 +31,11 @@ public:
                     bricks += pq.top();
                     pq.pop();
                     ladders--; // use the ladder
-                    bricks -= to_climb;
+                    bricks -= to_climb; // use bricks to climb
                     pq.push(to_climb);
                 }
                 else{
-                    ladders--;
+                    ladders--; // use ladder
                 }
             }
             else{
