@@ -1,37 +1,26 @@
 class Solution {
 public:
+    void sort_diagnol(vector<vector<int>> &matrix, int i, int j){
+        vector<int> arr;
+        int temp_i = i; int temp_j = j;
+        while(i < matrix.size() && j < matrix[0].size()){
+            arr.push_back(matrix[i][j]);
+            i++; j++;
+        }
+        sort(arr.begin(), arr.end());
+        i = temp_i; j = temp_j;
+        int k = 0;
+        while(i < matrix.size() && j < matrix[0].size()){
+            matrix[i][j] = arr[k];
+            k++; i++; j++;
+        }
+    }
     vector<vector<int>> diagonalSort(vector<vector<int>>& mat) {
         for(int i = 0; i < mat.size(); i++){
-            int j = 0;
-            int k = i;
-            vector<int> temp;
-            while(j < mat[0].size() && k < mat.size()){
-                temp.push_back(mat[k][j]);
-                j++;k++;
-            }
-            sort(temp.begin(), temp.end());
-            j = 0;
-            k = i;
-            while(j < mat[0].size() && k < mat.size()){
-                mat[k][j] = temp[j];
-                j++;k++;
-            }
+            sort_diagnol(mat, i, 0);
         }
-        for(int i = 0; i < mat[0].size(); i++){
-            int j = 0;
-            int k = i;
-            vector<int> temp;
-            while(j < mat.size() && k < mat[0].size()){
-                temp.push_back(mat[j][k]);
-                j++;k++;
-            }
-            j = 0;
-            k = i;
-            sort(temp.begin(), temp.end());
-            while(j < mat.size() && k < mat[0].size()){
-                mat[j][k] = temp[j];
-                j++;k++;
-            }
+        for(int j = 1; j < mat[0].size(); j++){
+            sort_diagnol(mat, 0, j);
         }
         return mat;
     }
