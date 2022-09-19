@@ -1,3 +1,6 @@
+/*
+* Keep track of max reachable location at each steop
+*/
 class Solution {
 public:
     vector<int> partitionLabels(string s) {
