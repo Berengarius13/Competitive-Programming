@@ -1,3 +1,8 @@
+// we only care about maximum gas
+// why because caluclate max distance as
+// Last fuel - dist_traveled + (total_dist) dist_traveled + station fuel
+// Last_fuel + staton_fuel;
+// Observation maximum distance travelled = max+dist + max_fuel_till now
 class Solution {
 public:
     int minRefuelStops(int target, int startFuel, vector<vector<int>>& stations) {
