@@ -27,12 +27,12 @@ public:
             ll mid = (s+e)/2;
             if(isPossible(nums, mid, k)){
                 e = mid - 1;
-                ans = mid;
+                // ans = mid;
             }
             else{
                 s = mid + 1;
             }
         }
-        return ans;
+        return s;
     }
 };
