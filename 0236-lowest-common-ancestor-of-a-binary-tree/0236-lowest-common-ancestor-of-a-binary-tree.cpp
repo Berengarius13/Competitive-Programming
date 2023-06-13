@@ -8,34 +8,43 @@
  * };
  */
 
-void dfs(TreeNode* root, TreeNode* p, TreeNode* q, int &num){
-    if(root == NULL) return;
-    dfs(root->left, p, q, num);
-    dfs(root->right, p, q, num);
-    if(p == root) num++;
-    if(q == root) num++;
-    // return left + right;
-}
-TreeNode * ans  = NULL;
-void dfs2(TreeNode* root, TreeNode *p, TreeNode* q, int len, int RequiredDepth){
-    if(root == NULL) return;
-    int num = 0;
-    dfs(root, p, q, num);
-    if(num == 2){
-        if(len > RequiredDepth){
-            len = RequiredDepth;
+TreeNode * ans;
+
+int dfs(TreeNode* root, TreeNode* p, TreeNode* q){
+    if(root == NULL) return 0;
+    
+    auto left = dfs(root->left, p, q);
+    auto right = dfs(root->right, p, q);
+    if(left == 4) return 4;
+    if(right == 4) return 4;
+    if(((left == 2 && right == 1) || (left == 1 && right == 2)) && ans == NULL){
+        ans = root; 
+        return 4;
+    }
+    if(root == p){
+        if((left == 2 || right == 2) && ans == NULL){
             ans = root;
+            return 4;
         }
     }
-    dfs2(root->left, p, q, len+1, RequiredDepth);
-    dfs2(root->right, p, q, len+1, RequiredDepth);
+    if(root == q){
+        if((left == 1 || right == 1) && ans == NULL){
+            ans = root;
+            return 4;
+        }
+    }
+    
+    if(p == root) return 1;
+    if(q == root) return 2;
+    
+    return left + right;
 }
 
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        ans = root;
-        dfs2(root, p, q, 0, INT_MIN);
+        ans = NULL;
+        dfs(root, p, q);
         return ans;
     }
 };
