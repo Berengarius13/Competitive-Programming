@@ -1,45 +1,33 @@
+#define ll unsigned long long
+#define bit bitset<64>
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
-        if(root == NULL)
-            return 0;
-        
-        int res = 1;
-        queue<pair<TreeNode*, unsigned int>> q;
-        
-        // I am using intialising list
-        q.push({root, 0});      // also can use make_pair
-        
-        while(!q.empty())
-        {
-            int cnt = q.size();
-            // start is the index of root node for first level
-            int start = q.front().second;
-            int end = q.back().second;
-            
-            res = max(res,end-start + 1);
-            
-            for(int i = 0; i <cnt; ++i)
-            {
-                pair<TreeNode*, int> p = q.front();
-                // we will use it while inserting it children
-                // left child will be 2 * idx + 1;
-                // right chils will be 2 * idx + 2;
-                unsigned int idx = p.second - start;
-                
+        queue<pair<TreeNode*, ll>> q;
+        q.push({root, 1});
+        ll ans = 1;
+        while(!q.empty()){
+            int sz = q.size();
+            ll left, right;
+            for(int i = 0; i < sz; i++){
+                TreeNode* node = q.front().first;
+                ll s = q.front().second;
                 q.pop();
-                
-                // if  left child exist
-                if(p.first->left != NULL)
-                    q.push({p.first->left, 2 * idx + 1});
-                
-                // if right child exist
-                if(p.first->right != NULL)
-                    q.push({p.first->right,  2 * idx + 2});
+                if(i == 0){
+                    left = s;
+                }
+                if(i == sz-1){
+                    right = s;
+                }
+                if(node->left != NULL){
+                    q.push({node->left, 2*s});
+                }
+                if(node->right != NULL){
+                    q.push({node->right, 2*s+1});
+                }
             }
+            ans = max(ans, right - left + 1);
         }
-        
-        return res;
-        
+        return ans;
     }
 };
