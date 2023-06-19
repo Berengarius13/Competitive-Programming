@@ -18,7 +18,6 @@ public:
                         word[i] = ch;
                         if(mp.find(word) != mp.end()){
                             g[j].push_back(mp[word]);
-                            cout << j << " " << word << endl;
                         }
                     }
                 }
