@@ -1,3 +1,4 @@
+// can also do terniry search for convex function
 #define pll pair<long long, long long> 
 #define ll long long 
 #define vll vector<long long> 
