@@ -22,12 +22,12 @@ public:
             lastCost += abs(nums[0].first - nums[i].first) * nums[i].second;
         }
         ll ans = lastCost;
-        cout << lastCost << " ";
+        // cout << lastCost << " ";
         for(int i = 1; i < n; i++){
             ll p1 = prefix[i] - prefix[0];
             ll p2 = prefix[n] - prefix[i];
             lastCost +=( (nums[i].first-nums[i-1].first) *p1) + ((nums[i-1].first - nums[i].first) * p2);
-            cout <<(nums[i-1].first - nums[i].first) * p2<< " ";
+            // cout <<(nums[i-1].first - nums[i].first) * p2<< " ";
             ans = min(lastCost, ans);
         }
         return ans;
