@@ -1,38 +1,42 @@
-#define ll long long int
 class Solution {
 public:
-    bool isPossible(vector<int>&n,int mid,int m){
-        int sum=0,count=1;
-        for(int i=0;i<n.size();i++){
-            sum+=n[i];
-            if(sum>mid){
-                sum=n[i];
-                count++;
+    bool isPossible(vector<int> &nums, int val, int k){
+        int splits = 1;
+        int cur_sum = 0;
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i] > val) return false;
+            if(nums[i] + cur_sum > val){
+                cur_sum = 0;
+                splits++;
             }
-            if(count>m)return 0;
+            cur_sum += nums[i];
         }
-        return 1;
+        if(cur_sum > val) splits++;
+        return splits <= k;
     }
     int splitArray(vector<int>& nums, int k) {
-        // sort(nums.begin(), nums.end());
-        int ans = 0;
-        int s = INT_MIN;
-        int e = 0;
-        for(int n:nums){
-            s = max(n,s);
-            e += n;
-        }
-        // cout<<IsPossible(nums, k, 5)<<" ";
+        int s = 0;
+        int e = 1e9;
         while(s <= e){
-            ll mid = (s+e)/2;
+            int mid = 1ll * (s+e)/2;
             if(isPossible(nums, mid, k)){
                 e = mid - 1;
-                // ans = mid;
             }
             else{
                 s = mid + 1;
             }
         }
+        // cout << isPossible(nums, 14, k);
+        // int cur_sum = 0;
+        // int val = e;
+        // int mx = INT_MIN;
+        // for(int i = 0; i < nums.size(); i++){
+        //     if(nums[i] + cur_sum > val){
+        //         cur_sum = 0;
+        //     }
+        //     cur_sum += nums[i];
+        //     mx = max(cur_sum, mx);
+        // }
         return s;
     }
 };
