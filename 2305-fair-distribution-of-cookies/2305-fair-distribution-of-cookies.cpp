@@ -1,25 +1,28 @@
 class Solution {
 public:
-    int ans = INT_MAX;
-    void dfs(vector<int> &nums, int i, vector<int> &container){
-        if(i == nums.size()){
-            int maxi = INT_MIN;
-            for(auto &it : container){
-                maxi = max(maxi, it);
+    // either cookie goes to first/ second/ third bag
+    void fun(vector<int> &nums, int i, vector<int> &bag, int &mn){
+        int n = nums.size();
+        // calculate unfairness
+        if(i == n){
+            int mx = INT_MIN;
+            for(auto &num : bag){
+                mx = max(num, mx);
             }
-            ans = min(ans, maxi);
+            mn = min(mn, mx);
             return;
         }
         
-        for(int k = 0; k < container.size(); k++){
-            container[k] += nums[i];
-            dfs(nums, i+1, container);
-            container[k] -= nums[i];
+        for(int j = 0; j < bag.size(); j++){
+            bag[j] += nums[i];
+            fun(nums, i+1, bag, mn);
+            bag[j] -= nums[i];
         }
     }
-    int distributeCookies(vector<int>& cookies, int k) {
-        vector<int> container(k, 0);
-        dfs(cookies, 0, container);
-        return ans;
+    int distributeCookies(vector<int>& nums, int k) {
+        vector<int> bag(k, 0);
+        int mn = INT_MAX;
+        fun(nums, 0, bag, mn);
+        return mn;
     }
 };
